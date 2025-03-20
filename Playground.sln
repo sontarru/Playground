@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.002.0
+VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BB76874F-2570-4422-9F08-CAE3EC3FCD18}"
 EndProject
@@ -13,13 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzDemo", "src\QuartzDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalVsHeapBenchmark", "src\LocalVsHeapBenchmark\LocalVsHeapBenchmark.csproj", "{9D1FC662-C457-4AD4-AD56-83D4387176EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kroleg", "src\Kroleg\Kroleg.csproj", "{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}"
+EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {33DB98A4-97A0-40C8-AA05-3EB288F090E7}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -77,11 +73,30 @@ Global
 		{9D1FC662-C457-4AD4-AD56-83D4387176EA}.Release|x64.Build.0 = Release|Any CPU
 		{9D1FC662-C457-4AD4-AD56-83D4387176EA}.Release|x86.ActiveCfg = Release|Any CPU
 		{9D1FC662-C457-4AD4-AD56-83D4387176EA}.Release|x86.Build.0 = Release|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Release|x64.Build.0 = Release|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC8B7262-0EBD-451B-B4A9-6E0114C6A7DC} = {BB76874F-2570-4422-9F08-CAE3EC3FCD18}
 		{84365BB5-D0EF-42DF-B15E-5A14BED4E639} = {BB76874F-2570-4422-9F08-CAE3EC3FCD18}
 		{0E50025B-2D5F-42C2-B76E-7C4EEBF5E4C5} = {BB76874F-2570-4422-9F08-CAE3EC3FCD18}
 		{9D1FC662-C457-4AD4-AD56-83D4387176EA} = {BB76874F-2570-4422-9F08-CAE3EC3FCD18}
+		{BC6C3F88-466A-4C04-8F51-D58936CA5FF5} = {BB76874F-2570-4422-9F08-CAE3EC3FCD18}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33DB98A4-97A0-40C8-AA05-3EB288F090E7}
 	EndGlobalSection
 EndGlobal
