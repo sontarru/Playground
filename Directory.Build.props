@@ -1,8 +1,37 @@
 <Project>
+
+  <!-- Version -->
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <VersionPrefix>0.0.1</VersionPrefix>
   </PropertyGroup>
+
+  <!-- Build properties -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Assembly & Package properties -->
+  <PropertyGroup>
+    <!-- By default is not packable -->
+    <IsPackable>false</IsPackable>
+    <Product>Playground</Product>
+    <Description>Playground</Description>
+    <Authors>fkthat</Authors>
+    <Company>fkthat</Company>
+    <Copyright>© fkthat, 2025</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryName>Playground</RepositoryName>
+    <RepositoryUrl>https://github.com/fkthat/Playground</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/fkthat/Playground</PackageProjectUrl>
+    <PackageTags></PackageTags>
+  </PropertyGroup>
+
+  <!-- Make internals visible to Castle (for tests) -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2"/>
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,8 @@
-﻿Foo foo1 = new() { Id = 42, Ololo = 73, Name = "foo1" };
+﻿using System.Diagnostics.CodeAnalysis;
+
+[assembly: SuppressMessage("Globalization", "CA1303: Do not pass literals as localized parameters")]
+
+Foo foo1 = new() { Id = 42, Ololo = 73, Name = "foo1" };
 Foo foo2 = new() { Id = 42, Ololo = 51, Name = "foo2" };
 
 // чтозанах - ожидаем false, но получаем true...

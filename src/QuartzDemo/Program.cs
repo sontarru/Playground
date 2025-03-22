@@ -20,10 +20,10 @@ var app = builder.Build();
 
 app.MapPost(
     "/{user}",
-    async(string user, ISchedulerFactory schedulerFactory, CancellationToken ct) =>
+    async (string user, ISchedulerFactory schedulerFactory, CancellationToken ct) =>
     {
         // Использовать планировщик по-умолчанию
-        var scheduler = await schedulerFactory.GetScheduler(ct);
+        var scheduler = await schedulerFactory.GetScheduler(ct).ConfigureAwait(false);
 
         // Создаём Job с новым GUID для имени и именем пользователя для группы
         var job = JobBuilder.Create<DemoJob>()
@@ -38,7 +38,7 @@ app.MapPost(
             .Build();
 
         // Привязать триггер к Job - это его запустит
-        await scheduler.ScheduleJob(job, trigger, ct);
+        await scheduler.ScheduleJob(job, trigger, ct).ConfigureAwait(false);
     });
 
 //
@@ -49,11 +49,12 @@ app.MapGet(
     "/{user}",
     async (string user, ISchedulerFactory schedulerFactory, CancellationToken ct) =>
     {
-        var scheduler = await schedulerFactory.GetScheduler(ct);
+        var scheduler = await schedulerFactory.GetScheduler(ct).ConfigureAwait(false);
 
         // выбираем все задачи по имени пользователя, которое для каждой
         // задачи является именем группы
-        var keys = await scheduler.GetJobKeys(GroupMatcher<JobKey>.GroupEquals(user), ct);
+        var keys = await scheduler.GetJobKeys(GroupMatcher<JobKey>.GroupEquals(user), ct)
+            .ConfigureAwait(false);
 
         return keys.Select(k => k.Name);
     });
@@ -66,13 +67,13 @@ app.MapDelete(
     "/{user}/{jobid}",
     async (string user, Guid jobid, ISchedulerFactory schedulerFactory, CancellationToken ct) =>
     {
-        var scheduler = await schedulerFactory.GetScheduler(ct);
+        var scheduler = await schedulerFactory.GetScheduler(ct).ConfigureAwait(false);
 
         // останавливаем задачу (посылаем ей Cancel)
-        await scheduler.Interrupt(new JobKey(jobid.ToString(), user));
+        await scheduler.Interrupt(new JobKey(jobid.ToString(), user), ct).ConfigureAwait(false);
     });
 
-await app.RunAsync();
+await app.RunAsync().ConfigureAwait(false);
 
 /// <summary>
 /// Бесконечная задача.
@@ -81,9 +82,9 @@ class DemoJob : IJob
 {
     public async Task Execute(IJobExecutionContext context)
     {
-        while(true)
+        while (true)
         {
-            await Task.Delay(1000, context.CancellationToken);
+            await Task.Delay(1000, context.CancellationToken).ConfigureAwait(false);
         }
     }
 }
