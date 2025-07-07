@@ -1,6 +1,8 @@
-<!-- Properties not overritable on template update -->
+<!--
+This file is not affected by template update and can be used for
+customization at the solution level.
+ -->
 <Project>
-
   <!-- Version -->
   <PropertyGroup>
     <VersionPrefix>0.0.1</VersionPrefix>
@@ -10,15 +12,14 @@
   <PropertyGroup>
     <Product>Playground</Product>
     <Description>Playground</Description>
-    <Authors>fkthat</Authors>
-    <Company>fkthat</Company>
-    <Copyright>© fkthat, 2025</Copyright>
+    <Authors>sontar.ru</Authors>
+    <Company>sontar.ru</Company>
+    <Copyright>© sontar.ru, 2025</Copyright>
     <RepositoryType>git</RepositoryType>
     <RepositoryName>Playground</RepositoryName>
-    <RepositoryUrl>https://github.com/fkthat/Playground</RepositoryUrl>
+    <RepositoryUrl>https://github.com/sontarru/Playground</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/fkthat/Playground</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/sontarru/Playground</PackageProjectUrl>
     <PackageTags></PackageTags>
   </PropertyGroup>
-
 </Project>

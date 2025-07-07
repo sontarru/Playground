@@ -1,13 +1,14 @@
 <Project>
   <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))" />
 
-  <!-- Determine the 'SUT' project name -->
+  <!-- Determine the 'SUT' project name                     -->
+  <!-- as the test project name without the '.Tests' suffix -->
   <PropertyGroup>
     <SutProjectName>$([System.Text.RegularExpressions.Regex]::Replace('$(MSBuildProjectName)', '\.Tests$', ''))</SutProjectName>
   </PropertyGroup>
 
-  <!-- Ajust the root namespace -->
-  <PropertyGroup>
+  <!-- Ajust the root namespace if not defined earlier. -->
+  <PropertyGroup Condition="'$(RootNamespace)' == ''">
     <RootNamespace>$(SutProjectName)</RootNamespace>
   </PropertyGroup>
 
@@ -31,17 +32,19 @@
 
   <!-- References for test projects -->
   <ItemGroup>
-    <PackageReference Include="FakeItEasy" />
-    <PackageReference Include="FluentAssertions" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <Using Include="FakeItEasy" />
-    <Using Include="FluentAssertions" />
+    <PackageReference Include="FakeItEasy"/>
+    <PackageReference Include="AwesomeAssertions"/>
+  </ItemGroup>
+  <ItemGroup>
     <Using Include="Xunit" />
+    <Using Include="FakeItEasy" />
+    <Using Include="AwesomeAssertions" />
   </ItemGroup>
 
   <!-- SUT project reference -->
@@ -52,4 +55,5 @@
     <ProjectReference Include="$(SutProjectPath)"/>
   </ItemGroup>
 
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Test.props"/>
 </Project>
